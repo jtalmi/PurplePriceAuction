@@ -1,5 +1,4 @@
 # Introduction
-
 An implementation of the Purple Price auction as described by Baliga and Ely in [HRB](https://hbr.org/2013/05/any-business-trying-to-sell).
 
 The Purple Price auction is a descending price auction where bidders pay the final price instead of their submitted bids. The auctioneer sets an initial price and drops the price incrementally as long as it appears optimal to do so. The final price reflects the point where the expected payoff of another price_drop is negative.
@@ -10,14 +9,20 @@ Say you've sold 5,000 concert tickets at $50 each, earning a total revenue of $2
 Repeated price decrements allows us to learn the demand curve and market-clearing price that maximizes revenue for the seller. Purple pricing, as opposed to traditional Dutch auctions, allows buyers to bid their true values since they don't face adverse payoffs from buying too early.
 
 ## Overview
-
 This implementation makes several assumptions about the Purple Pricing algorithm.
 
 The expected gain from a price decrement is equal to the quantity of tickets sold at the current price multiplied by new price point. More advanced ways to infer the demand curve may be introduced later.
 
 In the simulated auction, users' Willingness To Pay (WTP) follows a geometric distribution. We institute a floor for the distribution to make the WTP numbers more realistic.
 
-All parameters can be set by the user and have sensible defaults. The help documentation can be found here:
+# Usage
+To use, run:
+
+```
+python simulate_auction.py
+```
+
+The help documentation can be found here.
 
 ```
 Run a simulation of a Purple Price Auction
